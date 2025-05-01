@@ -1,6 +1,8 @@
 name: New Workflow
 
-on: push
+on: 
+    gollum:
+    pull_request:
 
 jobs:
     running_job:
