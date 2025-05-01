@@ -3,6 +3,8 @@ name: New Workflow
 on: 
     gollum:
     pull_request:
+    issue_comment:
+        types: [created, deleted]
 
 jobs:
     running_job:
