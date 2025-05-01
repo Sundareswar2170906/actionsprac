@@ -1,0 +1,11 @@
+name: New Workflow
+
+on: push
+
+jobs:
+    running_job:
+        runs-on: ubuntu
+        steps:
+        - name: Print shell
+          run: echo index.js
+        
