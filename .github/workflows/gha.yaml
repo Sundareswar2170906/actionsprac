@@ -4,7 +4,7 @@ on: push
 
 jobs:
     running_job:
-        runs-on: ubuntu
+        runs-on: ubuntu-latest
         steps:
         - name: Print shell
           run: echo index.js
