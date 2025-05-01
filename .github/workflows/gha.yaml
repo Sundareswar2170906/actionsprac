@@ -6,6 +6,9 @@ on:
     fork:
     issue_comment:
         types: [created, deleted]
+    workflow_dispatch:
+    schedule:
+        - cron: "*/2 * * * *"
 
 jobs:
     running_job:
