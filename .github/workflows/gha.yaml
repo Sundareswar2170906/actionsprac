@@ -1,11 +1,7 @@
 name: New Workflow
 
 on: 
-    gollum:
-    pull_request:
-    fork:
-    issue_comment:
-        types: [created, deleted]
+    workflow_dispatch:
  
 
 jobs:
@@ -18,4 +14,9 @@ jobs:
             echo "Deployment complete ✅"
         - name: Print another
           run: echo Lord  
-        
+        - name: conditional
+          if: github.ref_name == 'main'
+          run: echo Main branch building
+        - name: conditional
+          if: github.ref_name == 'master'
+          run: echo Master branch building
