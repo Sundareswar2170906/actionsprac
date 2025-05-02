@@ -31,6 +31,13 @@ jobs:
         - name: second Job
           run : echo second job
     running_3:
+        needs: running_1
+        runs-on: ubuntu-latest
+        steps:
+        - name: third Job
+          run : echo third job
+    running_4:
+        needs: running_3
         runs-on: ubuntu-latest
         steps:
         - name: third Job
