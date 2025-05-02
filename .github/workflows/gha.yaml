@@ -20,3 +20,18 @@ jobs:
         - name: conditional
           if: github.ref_name == 'master'
           run: echo Master branch building
+    running_1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: first Job
+          run : echo first job
+    running_2:
+        runs-on: ubuntu-latest
+        steps:
+        - name: second Job
+          run : echo second job
+    running_3:
+        runs-on: ubuntu-latest
+        steps:
+        - name: third Job
+          run : echo third job
