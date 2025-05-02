@@ -6,9 +6,6 @@ on:
     fork:
     issue_comment:
         types: [created, deleted]
-    workflow_dispatch:
-    schedule:
-    - cron: "*/5 * * * *"
  
 
 jobs:
@@ -16,5 +13,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Print shell
-          run: echo index.js
+          run: |
+            echo index.js
+            echo "Deployment complete ✅"
+        - name: Print another
+          run: echo Lord  
         
