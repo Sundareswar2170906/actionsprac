@@ -1,43 +1,33 @@
-name: New Workflow
+name: CodeQL Scan
 
-on: [workflow_dispatch, push, pull_request]
- 
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-    running_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Print shell
-          run: |
-            echo index.js
-            echo "Deployment complete ✅"
-        - name: Print another
-          run: echo Lord  
-        - name: conditional
-          if: github.ref_name == 'main'
-          run: echo Main branch building
-        - name: conditional
-          if: github.ref_name == 'master'
-          run: echo Master branch building
-    running_1:
-        runs-on: ubuntu-latest
-        steps:
-        - name: first Job
-          run : echo first job
-    running_2:
-        runs-on: ubuntu-latest
-        steps:
-        - name: second Job
-          run : echo second job
-    running_3:
-        needs: running_1
-        runs-on: ubuntu-latest
-        steps:
-        - name: third Job
-          run : echo "::warning::msg"
-    running_4:
-        needs: running_3
-        runs-on: ubuntu-latest
-        steps:
-        - name: third Job
-          run : echo "::debug::msg"
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    strategy:
+      matrix:
+        language: [javascript]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Build
+        run: echo "Skip build for interpreted languages like Python or JS"
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
