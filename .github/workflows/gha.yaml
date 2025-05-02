@@ -35,10 +35,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: third Job
-          run : echo third job
+          run : echo "::warning::msg"
     running_4:
         needs: running_3
         runs-on: ubuntu-latest
         steps:
         - name: third Job
-          run : echo third job
+          run : echo "::debug::msg"
