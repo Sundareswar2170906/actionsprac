@@ -13,15 +13,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: upload
+        uses: actions/upload-artifact@v3
         with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run index.js
-        run: node index.js
+          name: release
+          path: /index.js
 
