@@ -1,0 +1,1 @@
+[![Create GitHub Release](https://github.com/Sundareswar2170906/actionsprac/actions/workflows/gha.yaml/badge.svg)](https://github.com/Sundareswar2170906/actionsprac/actions/workflows/gha.yaml)
