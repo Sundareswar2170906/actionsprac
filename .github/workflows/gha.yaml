@@ -2,8 +2,8 @@ name: Create GitHub Release
 
 on:
   push:
-  workflow_dispatch:
-    
+    tags:
+      - 'v*'  # Triggers on version tags like v1.0.0
 
 jobs:
   release:
@@ -19,5 +19,5 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Set up Node.js
-        run: node imdex.js
+      - name: Install dependencies
+        run: npm install
