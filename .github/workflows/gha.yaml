@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - name: upload
         uses: actions/upload-artifact@v3
         with:
           name: release
-          path: /index.js
+          path: ./index.js
 
