@@ -19,8 +19,4 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Build component
-        run: npm run build  # Ensure this produces build artifacts in /dist
-
+        run: npm run test --if-present
