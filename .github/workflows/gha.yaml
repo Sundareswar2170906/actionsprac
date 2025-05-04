@@ -1,21 +1,20 @@
-name: Create GitHub Release
+name: Upload Multiple Files Example
 
 on:
   push:
-  workflow_dispatch:
-    
+    branches:
+      - main
 
 jobs:
-  release:
-    name: Release Component
+  upload-files:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: upload
+        
+      - name: Upload all text files from the repo
         uses: actions/upload-artifact@v3
         with:
-          name: release
-          path: ./../index.js
-
+          name: text-files-artifact  # Artifact name
+          path: '**/*.js'  # Wildcard pattern to match all .txt files
