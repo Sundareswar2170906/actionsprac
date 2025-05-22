@@ -21,4 +21,4 @@ jobs:
           echo ::endgroup ::
 
       - name: Checkout code
-        run: echo "$INPUT_DEPLOY_ENV"
+        run: echo "${{ toJson(github)}}"
