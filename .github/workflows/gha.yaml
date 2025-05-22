@@ -14,10 +14,4 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Upload all text files from the repo
-        uses: actions/upload-artifact@v3
-        with:
-          name: text-files-artifact  # Artifact name
-          path: '**/*.js'  # Wildcard pattern to match all .txt files
+        run: echo github.event.inputs['deploy env']
