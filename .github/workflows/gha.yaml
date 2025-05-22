@@ -1,9 +1,12 @@
 name: Upload Multiple Files Example
+ 
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      deploy env:
+        description: 'Environment to deploy to'
+        required: true
 
 jobs:
   upload-files:
