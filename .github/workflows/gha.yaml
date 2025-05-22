@@ -13,5 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Grouping
+        run: |
+          echo ::group :: Uploading files
+          echo "This is a group of steps"
+          echo "This is a group of steps"
+          echo ::endgroup ::
+
       - name: Checkout code
         run: echo "$INPUT_DEPLOY_ENV"
