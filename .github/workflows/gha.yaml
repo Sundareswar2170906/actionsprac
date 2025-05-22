@@ -1,4 +1,4 @@
-name: Upload Multiple Files Example
+name: ${{'Upload Multiple Files Example'}}
  
 
 on:
