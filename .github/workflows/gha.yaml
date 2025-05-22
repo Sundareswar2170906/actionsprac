@@ -14,4 +14,4 @@ jobs:
 
     steps:
       - name: Checkout code
-        run: echo ${ INPUT_DEPLOY_ENV }
+        run: echo "$INPUT_DEPLOY_ENV"
